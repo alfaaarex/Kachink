@@ -6,55 +6,60 @@ import androidx.compose.ui.unit.dp
 // Material 3 Expressive Motion - Spring-based animations
 object Motion {
     // Spring specifications for natural, bouncy motion
-    val spring = spring<Float>(
+    fun <T> spring() = spring<T>(
         dampingRatio = Spring.DampingRatioMediumBouncy,
         stiffness = Spring.StiffnessMedium
     )
     
-    val springLow = spring<Float>(
+    val springFloat = spring<Float>(
+        dampingRatio = Spring.DampingRatioMediumBouncy,
+        stiffness = Spring.StiffnessMedium
+    )
+    
+    fun <T> springLow() = spring<T>(
         dampingRatio = Spring.DampingRatioLowBouncy,
         stiffness = Spring.StiffnessLow
     )
     
-    val springHigh = spring<Float>(
+    fun <T> springHigh() = spring<T>(
         dampingRatio = Spring.DampingRatioMediumBouncy,
         stiffness = Spring.StiffnessHigh
     )
     
     // Tween animations for specific use cases
-    val fast = tween<Float>(
+    fun <T> fast() = tween<T>(
         durationMillis = 150,
         easing = FastOutSlowInEasing
     )
     
-    val medium = tween<Float>(
+    fun <T> medium() = tween<T>(
         durationMillis = 300,
         easing = FastOutSlowInEasing
     )
     
-    val slow = tween<Float>(
+    fun <T> slow() = tween<T>(
         durationMillis = 500,
         easing = FastOutSlowInEasing
     )
     
     // Emphasized motion for important transitions
-    val emphasized = tween<Float>(
+    fun <T> emphasized() = tween<T>(
         durationMillis = 400,
         easing = CubicBezierEasing(0.2f, 0f, 0f, 1f)
     )
     
     // Standard motion for most transitions
-    val standard = tween<Float>(
+    fun <T> standard() = tween<T>(
         durationMillis = 300,
         easing = CubicBezierEasing(0.4f, 0f, 0.2f, 1f)
     )
     
     // Enter/Exit animations
-    val enterDuration = 300
-    val exitDuration = 200
+    const val enterDuration = 300
+    const val exitDuration = 200
     
     // Gesture-responsive animation
-    val gestureSpring = spring<Float>(
+    fun <T> gestureSpring() = spring<T>(
         dampingRatio = Spring.DampingRatioNoBouncy,
         stiffness = Spring.StiffnessMediumLow
     )

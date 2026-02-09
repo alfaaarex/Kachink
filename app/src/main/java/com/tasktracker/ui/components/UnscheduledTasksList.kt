@@ -2,6 +2,8 @@ package com.tasktracker.ui.components
 
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -96,10 +98,10 @@ fun UnscheduledTasksList(
             // Tasks list
             AnimatedVisibility(
                 visible = isExpanded,
-                enter = expandVertically(animationSpec = Motion.standard) + 
-                        fadeIn(animationSpec = Motion.standard),
-                exit = shrinkVertically(animationSpec = Motion.standard) + 
-                       fadeOut(animationSpec = Motion.standard)
+                enter = expandVertically(animationSpec = Motion.standard()) +
+                        fadeIn(animationSpec = Motion.standard()),
+                exit = shrinkVertically(animationSpec = Motion.standard()) +
+                       fadeOut(animationSpec = Motion.standard())
             ) {
                 Column(
                     modifier = Modifier.padding(top = 12.dp)

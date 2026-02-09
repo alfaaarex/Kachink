@@ -2,6 +2,7 @@ package com.tasktracker.data.local
 
 import androidx.room.TypeConverter
 import com.tasktracker.data.model.TaskLabel
+import com.tasktracker.data.model.TaskPriority
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -26,5 +27,15 @@ class Converters {
     @TypeConverter
     fun toTaskLabel(value: String): TaskLabel {
         return TaskLabel.valueOf(value)
+    }
+    
+    @TypeConverter
+    fun fromTaskPriority(value: TaskPriority): String {
+        return value.name
+    }
+    
+    @TypeConverter
+    fun toTaskPriority(value: String): TaskPriority {
+        return TaskPriority.valueOf(value)
     }
 }

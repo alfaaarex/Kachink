@@ -4,6 +4,7 @@ import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
@@ -44,7 +45,7 @@ fun TaskCard(
         } else {
             if (isDarkTheme) task.label.darkColor else task.label.lightColor
         },
-        animationSpec = Motion.standard,
+        animationSpec = Motion.standard(),
         label = "backgroundColor"
     )
     
@@ -58,7 +59,7 @@ fun TaskCard(
     var isPressed by remember { mutableStateOf(false) }
     val scale by animateFloatAsState(
         targetValue = if (isPressed) 0.95f else 1f,
-        animationSpec = Motion.spring,
+        animationSpec = Motion.spring(),
         label = "pressScale"
     )
     
@@ -99,6 +100,18 @@ fun TaskCard(
                     overflow = TextOverflow.Ellipsis,
                     modifier = Modifier.weight(1f)
                 )
+                
+                // Priority indicator
+                if (task.priority != com.tasktracker.data.model.TaskPriority.NONE) {
+                    Icon(
+                        imageVector = task.priority.icon,
+                        contentDescription = "${task.priority.displayName} priority",
+                        tint = task.priority.color,
+                        modifier = Modifier
+                            .size(18.dp)
+                            .padding(start = 4.dp)
+                    )
+                }
                 
                 // Completion indicator
                 if (task.isCompleted) {

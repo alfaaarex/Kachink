@@ -14,9 +14,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.tasktracker.data.model.Task
 import com.tasktracker.ui.theme.Motion
@@ -147,12 +149,12 @@ private fun TaskTimelineItem(
     val minuteOffset = startTime.minute
     val duration = task.durationMinutes ?: 60
     
-    val topOffset = with(density) { (minuteOffset / 60f * hourHeight.toPx()).dp }
-    val itemHeight = with(density) { (duration / 60f * hourHeight.toPx()).dp }
+    val topOffset = with(density) { (minuteOffset / 60f * hourHeight.toPx()).toDp() }
+    val itemHeight = with(density) { (duration / 60f * hourHeight.toPx()).toDp() }
     
     val scale by animateFloatAsState(
         targetValue = if (offsetY != 0f) 1.05f else 1f,
-        animationSpec = Motion.spring,
+        animationSpec = Motion.spring(),
         label = "scale"
     )
     

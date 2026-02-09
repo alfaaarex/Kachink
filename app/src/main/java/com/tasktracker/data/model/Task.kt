@@ -20,6 +20,8 @@ data class Task(
     
     val label: TaskLabel = TaskLabel.CUSTOM,
     
+    val priority: TaskPriority = TaskPriority.NONE,
+    
     val isCompleted: Boolean = false,
     
     val createdAt: LocalDateTime = LocalDateTime.now(),

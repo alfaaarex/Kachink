@@ -31,6 +31,7 @@ fun TaskEditorDialog(
     var title by remember { mutableStateOf(task?.title ?: "") }
     var description by remember { mutableStateOf(task?.description ?: "") }
     var selectedLabel by remember { mutableStateOf(task?.label ?: suggestedLabel ?: TaskLabel.CUSTOM) }
+    var selectedPriority by remember { mutableStateOf(task?.priority ?: com.tasktracker.data.model.TaskPriority.NONE) }
     var isScheduled by remember { mutableStateOf(task?.isScheduled ?: false) }
     var startTime by remember { mutableStateOf(task?.startTime?.toLocalTime() ?: LocalTime.now()) }
     var endTime by remember { mutableStateOf(task?.endTime?.toLocalTime() ?: LocalTime.now().plusHours(1)) }
@@ -160,6 +161,41 @@ fun TaskEditorDialog(
             
             Spacer(modifier = Modifier.height(16.dp))
             
+            // Priority selection
+            Text(
+                text = "Priority",
+                style = MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.onSurface
+            )
+            
+            Spacer(modifier = Modifier.height(8.dp))
+            
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                com.tasktracker.data.model.TaskPriority.values().forEach { priority ->
+                    FilterChip(
+                        selected = selectedPriority == priority,
+                        onClick = { 
+                            selectedPriority = priority
+                            haptic.selectionChange()
+                        },
+                        label = { Text(priority.displayName) },
+                        leadingIcon = {
+                            Icon(
+                                imageVector = priority.icon,
+                                contentDescription = null,
+                                tint = priority.color,
+                                modifier = Modifier.size(18.dp)
+                            )
+                        }
+                    )
+                }
+            }
+            
+            Spacer(modifier = Modifier.height(16.dp))
+            
             // Schedule toggle
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -262,6 +298,7 @@ fun TaskEditorDialog(
                             title = title,
                             description = description,
                             label = selectedLabel,
+                            priority = selectedPriority,
                             startTime = if (isScheduled) now.with(startTime) else null,
                             endTime = if (isScheduled) now.with(endTime) else null,
                             isCompleted = task?.isCompleted ?: false,

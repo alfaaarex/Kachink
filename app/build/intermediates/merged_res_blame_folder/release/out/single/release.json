@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "com.tasktracker.app-merged_res-74:/xml_data_extraction_rules.xml.flat",
+        "source": "com.tasktracker.app-main-75:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.tasktracker.app-merged_res-74:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.tasktracker.app-main-75:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.tasktracker.app-merged_res-74:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.tasktracker.app-main-75:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.tasktracker.app-merged_res-74:/drawable_ic_notification.xml.flat",
+        "source": "com.tasktracker.app-main-75:/drawable/ic_notification.xml"
+    },
+    {
+        "merged": "com.tasktracker.app-merged_res-74:/drawable_ic_snooze.xml.flat",
+        "source": "com.tasktracker.app-main-75:/drawable/ic_snooze.xml"
+    },
+    {
+        "merged": "com.tasktracker.app-merged_res-74:/drawable_ic_check.xml.flat",
+        "source": "com.tasktracker.app-main-75:/drawable/ic_check.xml"
+    },
+    {
+        "merged": "com.tasktracker.app-merged_res-74:/xml_backup_rules.xml.flat",
+        "source": "com.tasktracker.app-main-75:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.tasktracker.app-merged_res-74:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.tasktracker.app-main-75:/mipmap-anydpi-v26/ic_launcher.xml"
+    }
+]

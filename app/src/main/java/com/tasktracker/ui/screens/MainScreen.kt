@@ -31,6 +31,8 @@ fun MainScreen(
     var showTaskEditor by remember { mutableStateOf(false) }
     var editingTask by remember { mutableStateOf<Task?>(null) }
     var suggestedLabel by remember { mutableStateOf<com.tasktracker.data.model.TaskLabel?>(null) }
+    var showCelebration by remember { mutableStateOf(false) }
+    var showStats by remember { mutableStateOf(false) }
     
     val dateFormatter = DateTimeFormatter.ofPattern("EEEE, MMM d")
     
@@ -51,6 +53,15 @@ fun MainScreen(
                     }
                 },
                 actions = {
+                    IconButton(onClick = { 
+                        showStats = true
+                        haptic.lightTap()
+                    }) {
+                        Icon(
+                            imageVector = Icons.Default.BarChart,
+                            contentDescription = "Statistics"
+                        )
+                    }
                     IconButton(onClick = { /* Open settings */ }) {
                         Icon(
                             imageVector = Icons.Default.Settings,
@@ -117,6 +128,12 @@ fun MainScreen(
                     }
                 )
             }
+            
+            // Celebration animation overlay
+            TaskCompletionCelebration(
+                visible = showCelebration,
+                onDismiss = { showCelebration = false }
+            )
             
             // Loading indicator
             if (uiState.isLoading) {

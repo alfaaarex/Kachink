@@ -4,7 +4,6 @@ import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.font.FontVariation
 import androidx.compose.ui.text.googlefonts.Font
 import androidx.compose.ui.text.googlefonts.GoogleFont
 import androidx.compose.ui.unit.sp
@@ -17,91 +16,54 @@ val provider = GoogleFont.Provider(
     certificates = R.array.com_google_android_gms_fonts_certs
 )
 
-// Google Sans Flex - Playful, cheerful font for headers
-val googleSansFlexFontName = GoogleFont("Google Sans Flex")
+// Google Sans Flex
+val googleSansFlexFontName = GoogleFont("Google Sans")
 
 val GoogleSansFlexFontFamily = FontFamily(
     Font(
         googleFont = googleSansFlexFontName,
         fontProvider = provider,
-        weight = FontWeight.Normal,
-        variationSettings = FontVariation.Settings(
-            FontVariation.weight(400),
-            FontVariation.width(100f)
-        )
+        weight = FontWeight.Normal
     ),
     Font(
         googleFont = googleSansFlexFontName,
         fontProvider = provider,
-        weight = FontWeight.Medium,
-        variationSettings = FontVariation.Settings(
-            FontVariation.weight(500),
-            FontVariation.width(100f)
-        )
+        weight = FontWeight.Medium
     ),
     Font(
         googleFont = googleSansFlexFontName,
         fontProvider = provider,
-        weight = FontWeight.SemiBold,
-        variationSettings = FontVariation.Settings(
-            FontVariation.weight(600),
-            FontVariation.width(100f)
-        )
+        weight = FontWeight.SemiBold
     ),
     Font(
         googleFont = googleSansFlexFontName,
         fontProvider = provider,
-        weight = FontWeight.Bold,
-        variationSettings = FontVariation.Settings(
-            FontVariation.weight(700),
-            FontVariation.width(110f) // Slightly wider for emphasis
-        )
-    ),
-    Font(
-        googleFont = googleSansFlexFontName,
-        fontProvider = provider,
-        weight = FontWeight.ExtraBold,
-        variationSettings = FontVariation.Settings(
-            FontVariation.weight(800),
-            FontVariation.width(115f) // Even wider for maximum impact
-        )
+        weight = FontWeight.Bold
     )
 )
 
-// Roboto Flex - Clean, modern font for body text
-val robotoFlexFontName = GoogleFont("Roboto Flex")
+// Roboto Flex
+val robotoFlexFontName = GoogleFont("Roboto")
 
 val RobotoFlexFontFamily = FontFamily(
     Font(
         googleFont = robotoFlexFontName,
         fontProvider = provider,
-        weight = FontWeight.Normal,
-        variationSettings = FontVariation.Settings(
-            FontVariation.weight(400),
-            FontVariation.width(100f)
-        )
+        weight = FontWeight.Normal
     ),
     Font(
         googleFont = robotoFlexFontName,
         fontProvider = provider,
-        weight = FontWeight.Medium,
-        variationSettings = FontVariation.Settings(
-            FontVariation.weight(500),
-            FontVariation.width(100f)
-        )
+        weight = FontWeight.Medium
     ),
     Font(
         googleFont = robotoFlexFontName,
         fontProvider = provider,
-        weight = FontWeight.SemiBold,
-        variationSettings = FontVariation.Settings(
-            FontVariation.weight(600),
-            FontVariation.width(100f)
-        )
+        weight = FontWeight.SemiBold
     )
 )
 
-// Material 3 Expressive Typography with Variable Fonts
+// Material 3 Expressive Typography
 val Typography = Typography(
     displayLarge = TextStyle(
         fontFamily = GoogleSansFlexFontFamily,
@@ -209,4 +171,3 @@ val Typography = Typography(
         letterSpacing = 0.5.sp
     )
 )
-

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kachink</string>
+    
+    <!-- Task Labels -->
+    <string name="label_education">Education</string>
+    <string name="label_personal">Personal</string>
+    <string name="label_activity">Activity</string>
+    <string name="label_work">Work</string>
+    <string name="label_health">Health</string>
+    <string name="label_social">Social</string>
+    <string name="label_custom">Custom</string>
+    
+    <!-- Actions -->
+    <string name="action_add_task">Add Task</string>
+    <string name="action_edit_task">Edit Task</string>
+    <string name="action_delete_task">Delete Task</string>
+    <string name="action_complete_task">Complete</string>
+    <string name="action_snooze">Snooze</string>
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    
+    <!-- Task Editor -->
+    <string name="hint_task_title">Task Title</string>
+    <string name="hint_task_description">Description (optional)</string>
+    <string name="label_category">Category</string>
+    <string name="label_schedule_task">Schedule this task</string>
+    <string name="label_start_time">Start</string>
+    <string name="label_end_time">End</string>
+    
+    <!-- Timeline -->
+    <string name="unscheduled_tasks">Unscheduled Tasks</string>
+    <string name="tasks_count">%d tasks</string>
+    <string name="empty_unscheduled">All tasks scheduled!</string>
+    <string name="add_unscheduled_task">Add Unscheduled Task</string>
+    
+    <!-- Notifications -->
+    <string name="notification_channel_high">Task Reminders (High Priority)</string>
+    <string name="notification_channel_default">Task Reminders</string>
+    <string name="notification_channel_ongoing">Ongoing Tasks</string>
+    <string name="notification_task_starting">Starting at %s</string>
+    
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="theme_settings">Theme</string>
+    <string name="notification_settings">Notifications</string>
+    
+    <!-- Errors -->
+    <string name="error_generic">Something went wrong</string>
+    <string name="error_save_task">Failed to save task</string>
+    <string name="error_delete_task">Failed to delete task</string>
+</resources>
